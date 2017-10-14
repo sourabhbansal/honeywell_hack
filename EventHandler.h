@@ -1,46 +1,17 @@
-#pragma once
-enum EventType
-{
-	Addition,
-	Subtraction,
-	Multiplication,
-	Division
-};
+#ifndef __EVENTHANDLER_H__
+#define __EVENTHANDLER_H__
 
-class EventHandler
-{
-public:
-	EventHandler();
-	~EventHandler();
-	virtual bool HandleEvent();
-	EventHandler* GetHandler(EventType type);
-};
+#include "EventType.h"
 
+namespace reactor {
 
-class SumHandler : public EventHandler
-{
-	bool HandleEvent() {
+	class EventHandler {
+	public:
+		EventHandler(int iFd, EventType iEventType);
 
-	}
-};
+	
+	};
 
-class DiffHandler : public EventHandler
-{
-	bool HandleEvent() {
+} 
 
-	}
-};
-
-class MulHandler : public EventHandler
-{
-	bool HandleEvent() {
-
-	}
-};
-
-class DivHandler : public EventHandler
-{
-	bool HandleEvent() {
-
-	}
-};
+#endif 
